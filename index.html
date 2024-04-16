@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/iconsfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker.min.css"
+    />
+
+    <link rel="stylesheet" href="choices.min.css" />
+
+    <title>Maket Hotel</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container _container">
+          <a href="index.html" class="header__logo">
+            <img src="img/Logo.svg" alt="Логотип" />
+          </a>
+          <nav class="header__menu menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="" class="menu__link">O нас</a>
+              </li>
+              <li class="menu__item">
+                <a href="rooms.html" class="menu__link">Услуги</a>
+                <div class="menu__arrow arrow _icon-down"></div>
+
+                <!--второй уровень списка
+                                <ul class="sub-menu__list">
+                                <li><a href="" class="sub-menu__link">Услуга №1</a></li>
+                                <li><a href="" class="sub-menu__link">Услуга №2</a></li>
+                                <li><a href="" class="sub-menu__link">Услуга №3</a></li>
+                            </ul>-->
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">Вакансии</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">Новости</a>
+              </li>
+
+              <li class="menu__item">
+                <a href="" class="menu__link">Соглашение</a>
+                <div class="menu__arrow arrow _icon-down"></div>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__buttons">
+            <a href="signIn.html" class="button button_white">ВОЙТИ</a>
+            <a href="registration.html" class="button button_blue">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <!--Блок для подбора номеров-->
+        <div class="page__main-block main-block"></div>
+        <div class="main-block__container _container">
+          <div class="main-block__body block">
+            <div class="main-block__body block__box">
+              <form action="#" id="foo">
+                <div class="block__title">Найдем номера под ваши пожелания</div>
+                <div class="block__items">
+                  <div class="block__date">
+                    <label class="block__label">Прибытие</label>
+                    <span class="block__arrow"></span>
+                    <div class="block__date block__time">
+                      <input
+                        type="text"
+                        id="input"
+                        name="start"
+                        class="arrived"
+                        placeholder="ДД.MM.YYYY"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="block__date">
+                    <label class="block__label">Выезд</label>
+                    <span class="block__arrow"></span>
+                    <div class="block__date block__time">
+                      <input
+                        type="text"
+                        id="input1"
+                        name="end"
+                        class="finished"
+                        placeholder="ДД.MM.YYYY"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!--Select ГОСТИ -->
+
+                <div class="select">
+                  <label class="select__label"> <span>Гости</span></label>
+                  <div class="select__header" onmousedown="viewDiv()">
+                    <div class="select__current">Сколько гостей</div>
+                    <div class="select__icon"></div>
+                  </div>
+                  <div class="form">
+                    <input
+                      type="button"
+                      onclick="r()"
+                      value="Подобрать номер"
+                      class="form__button form__button_search"
+                    />
+                  </div>
+
+                  <div class="select__dropdown" id="div1">
+                    <div class="select__body">
+                      <div class="select__item">
+                        Взрослые
+                        <div class="counter" data-counter>
+                          <div class="counter__button counter__button_minus">
+                            -
+                          </div>
+                          <div class="counter__input">
+                            <input type="number" disabled value="1" />
+                          </div>
+                          <div class="counter__button counter__button_plus">
+                            +
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="select__item">
+                        Дети
+                        <div class="counter" data-counter>
+                          <div class="counter__button counter__button_minus">
+                            -
+                          </div>
+                          <div class="counter__input">
+                            <input type="number" disabled value="1" />
+                          </div>
+                          <div class="counter__button counter__button_plus">
+                            +
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select__item">
+                        Младенцы
+                        <div class="counter" data-counter>
+                          <div class="counter__button counter__button_minus">
+                            -
+                          </div>
+                          <div class="counter__input">
+                            <input type="number" disabled value="1" />
+                          </div>
+                          <div class="counter__button counter__button_plus">
+                            +
+                          </div>
+                        </div>
+                      </div>
+                      <!--Кнопки очистить и применить -->
+                      <div class="change">
+                        <div class="button-1" data-action="clear">Очистить</div>
+                        <div class="button-1" data-action="apply">
+                          Применить
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="text-right">
+            Лучшие номера для вашей работы, отдыха и просто вдохновения.
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__main _container">
+          <div class="footer__row">
+            <div class="footer__column">
+              <a href="index.html" class="footer__logo">
+                <img src="img/Logo.svg" alt="Логотип" />
+              </a>
+              <div class="footer__subject">
+                <p>
+                  Бронирование номеров в лучшем отеле 2019 года по версии
+                  ассоциации "Отельные взгляды"
+                </p>
+              </div>
+            </div>
+
+            <div class="footer__column">
+              <h3>НАВИГАЦИЯ</h3>
+              <nav class="footer__menu menu-footer">
+                <ul class="menu-footer__list">
+                  <li class="menu-footer__item"></li>
+                  <li><a href="" class="menu-footer__link">О нас</a></li>
+                  <li><a href="" class="menu-footer__link">Новости</a></li>
+                  <li>
+                    <a href="" class="menu-footer__link">Служба поддержки</a>
+                  </li>
+                  <li>
+                    <a href="rooms.html" class="menu-footer__link">Услуги</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="footer__column">
+              <h3>О НАС</h3>
+              <nav class="footer__menu menu-footer">
+                <ul class="menu-footer__list">
+                  <li class="menu-footer__item"></li>
+                  <li><a href="" class="menu-footer__link">О сервисе</a></li>
+                  <li><a href="" class="menu-footer__link">Наша команда</a></li>
+                  <li><a href="" class="menu-footer__link">Вакансии</a></li>
+                  <li><a href="" class="menu-footer__link">Инвесторы</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="footer__column">
+              <h3>СЛУЖБА ПОДДЕРЖКИ</h3>
+              <nav class="footer__menu menu-footer">
+                <ul class="menu-footer__list">
+                  <li><a href="" class="menu-footer__link">Соглашения</a></li>
+                  <li></li>
+                  <li><a href="" class="menu-footer__link">Сообщества</a></li>
+                  <li><a href="" class="menu-footer__link">Связь с нами</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="footer__column">
+              <h3>ПОДПИСКА</h3>
+              <div class="footer__contacts contacts-footer">
+                <div class="contacts-footer__item">
+                  Получайте специальные предложения и новости сервиса
+                </div>
+              </div>
+              <div class="footer-search">
+                <input type="text" placeholder="E-mail" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="hr-line" />
+        <div class="footer__bottom">
+          <div class="footer__container _container">
+            <div class="footer__copy">
+              Copyright © 2018 Toxin отель. Все права защищены.
+            </div>
+            <div class="footer__social social">
+              <ul class="social-list">
+                <li>
+                  <a href="" class="social__item"
+                    ><img src="img/twit.svg" alt="social-twitter"
+                  /></a>
+                </li>
+                <li>
+                  <a href="" class="social__item"
+                    ><img src="img/faceb.svg" alt="social-facebook"
+                  /></a>
+                </li>
+                <li>
+                  <a href="" class="social__item"
+                    ><img src="img/insta.svg" alt="social-instagram"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="choices.min.js"></script>
+    <script src="datepicker.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

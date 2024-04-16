@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/iconsfont.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    />
+    <link rel="stylesheet" href="./src/scss/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="nouislider.min.css" />
+    <link rel="stylesheet" href="choices.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Maket Hotel</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container _container">
+          <a href="index.html" class="header__logo">
+            <img src="img/Logo.svg" alt="Логотип" />
+          </a>
+          <nav class="header__menu menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="index.html" class="menu__link">O нас</a>
+              </li>
+              <li class="menu__item">
+                <a href="rooms.html" class="menu__link">Услуги</a>
+                <div class="menu__arrow arrow _icon-down"></div>
+
+                <!--второй уровень списка
+                                <ul class="sub-menu__list">
+                                <li><a href="" class="sub-menu__link">Услуга №1</a></li>
+                                <li><a href="" class="sub-menu__link">Услуга №2</a></li>
+                                <li><a href="" class="sub-menu__link">Услуга №3</a></li>
+                            </ul>-->
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">Вакансии</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">Новости</a>
+              </li>
+
+              <li class="menu__item">
+                <a href="" class="menu__link">Соглашение</a>
+                <div class="menu__arrow arrow _icon-down"></div>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__buttons">
+            <a href="" class="button button_white">ВОЙТИ</a>
+            <a href="" class="button button_blue">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="block">
+          <div class="block__container _container">
+            <div class="filter">
+              <div class="filter__container">
+                <div class="filter__items">
+                  <div class="filter__item-sidebars">
+                    <!--дата прибытия -->
+                    <div class="item-sidebars date">
+                      <div class="item-sidebars__label">
+                        <span> Даты пребывания в отеле</span>
+                      </div>
+                      <span class="block__arrow"></span>
+                      <div class="item-sidebars"></div>
+
+                      <div class="out"></div>
+                    </div>
+                    <div class="guests">
+                      <div class="guests__label">
+                        <span>Гости</span>
+                      </div>
+                      <div class="guests__header" onmousedown="viewDiv()">
+                        <div class="guests__current">
+                          Сколько гостей 3 гостя..
+                        </div>
+                        <div class="guests__icon _icon-down"></div>
+                      </div>
+                    </div>
+                    <div class="price">
+                      <div class="price__item price-filter">
+                        <h3 class="price-filter__title">Диапазон цен</h3>
+                        <div class="price-filter__inputs">
+                          <label class="price-filter__label">
+                            <input
+                              type="number"
+                              min="500"
+                              max="999999"
+                              placeholder="500"
+                              class="price-filter__input"
+                              id="input-0"
+                            />
+                            <span class="price-filter__text">₽</span>
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                          </label>
+                          <label class="price-filter__label">
+                            <input
+                              type="number"
+                              min="500"
+                              max="999999"
+                              placeholder="10000"
+                              class="price-filter__input"
+                              id="input-1"
+                            />
+                            <span class="price-filter__text">₽</span>
+                          </label>
+                        </div>
+                        <div
+                          class="price-filter__slider"
+                          id="range-slider"
+                        ></div>
+                        <label class="price-filter__text"
+                          >Стоимость за сутки прибытия номера</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="rules checkbox">
+                      <div class="lable-main">ПРАВИЛА ДОМА</div>
+                      <div class="checkbox">
+                        <input type="checkbox" name="1" checked />
+                        <label>Можно курить</label>
+                      </div>
+
+                      <div>
+                        <input type="checkbox" name="2" />
+                        <label>Можно с питомцами</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" name="3" />
+                        <label>Можно пригласить гостей (до 10 человек)</label>
+                      </div>
+
+                      <div class="lable-main">ДОСТУПНОСТЬ</div>
+
+                      <div>
+                        <input type="checkbox" name="#" />
+                        <label>Широкий коридор</label>
+                        <label class="label-text"
+                          >Широкий коридор в номере не менее 91см</label
+                        >
+                      </div>
+                      <div>
+                        <input type="checkbox" name="#" />
+                        <label>Помощник для инвалидов</label>
+                        <div class="label-text">
+                          На 1 этаже вас встретит специалист и проводит до
+                          номера
+                        </div>
+                      </div>
+
+                      <div class="lable-main">Удобства</div>
+
+                      <div class="select">
+                        <div class="label-main">Гости</div>
+                        <div class="select__header" onmousedown="viewDiv()">
+                          <div class="select__current">Сколько гостей</div>
+                          <div class="select__icon"></div>
+                        </div>
+
+                        <div class="select__dropdown" id="div1">
+                          <div class="select__body">
+                            <div class="select__item">
+                              Спальни
+                              <div class="counter" data-counter>
+                                <div
+                                  class="counter__button counter__button_minus"
+                                >
+                                  -
+                                </div>
+                                <div class="counter__input">
+                                  <input type="number" disabled value="1" />
+                                </div>
+                                <div
+                                  class="counter__button counter__button_plus"
+                                >
+                                  +
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="select__item">
+                              Кровати
+                              <div class="counter" data-counter>
+                                <div
+                                  class="counter__button counter__button_minus"
+                                >
+                                  -
+                                </div>
+                                <div class="counter__input">
+                                  <input type="number" disabled value="1" />
+                                </div>
+                                <div
+                                  class="counter__button counter__button_plus"
+                                >
+                                  +
+                                </div>
+                              </div>
+                            </div>
+                            <div class="select__item">
+                              Ванные комнаты
+                              <div class="counter" data-counter>
+                                <div
+                                  class="counter__button counter__button_minus"
+                                >
+                                  -
+                                </div>
+                                <div class="counter__input">
+                                  <input type="number" disabled value="1" />
+                                </div>
+                                <div
+                                  class="counter__button counter__button_plus"
+                                >
+                                  +
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--ПРАВАЯ СТОРОНА-->
+
+            <div class="title-table">Номера, которые мы для вас подобрали</div>
+            <div class="block__items">
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/1.1.png" alt="room1"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" alt="room2"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" alt="room3" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="room4"/>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 888
+                        <span class="luxury">люкс</span></a
+                      >
+                      <div class="item-price">
+                        9 909₽ <span class="item-price-text">в сутки</span>
+                      </div>
+                    </div>
+                    <hr class="hr-lines" />
+
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="first"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="first"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="first"
+                            value="3"
+                            aria-label="Нормально"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="first"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="first"
+                            value="5"
+                            aria-label="Отлично"
+                            checked
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        145<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="item-blok">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="img/rooms/2.png" alt="slider-room1"/>
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="img/rooms/2.2.png"  alt="slider-room2"/>
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="img/rooms/2.3.png"  alt="slider-room3"/>
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="img/rooms/2.1.png" alt="slider-room4" />
+                        </div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 840</a
+                      >
+                      <div class="item-price">9 909₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <div class="rating__group">
+                        <input
+                          class="rating__star"
+                          type="radio"
+                          name="second"
+                          value="1"
+                          aria-label="Ужасно"
+                        />
+                        <input
+                          class="rating__star"
+                          type="radio"
+                          name="second"
+                          value="2"
+                          aria-label="Сносно"
+                        />
+                        <input
+                          class="rating__star"
+                          type="radio"
+                          name="second"
+                          value="3"
+                          aria-label="Нормально"
+                        />
+                        <input
+                          class="rating__star"
+                          type="radio"
+                          name="second"
+                          value="4"
+                          aria-label="Хорошо"
+                          checked
+                        />
+                        <input
+                          class="rating__star"
+                          type="radio"
+                          name="second"
+                          value="5"
+                          aria-label="Отлично"
+                        />
+                        <div class="rating__focus"></div>
+                      </div>
+                      <div class="item-price">
+                        65<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/3.png"  alt="swiper-slider-room1"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png"  alt="swiper-slider-room2" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png"  alt="swiper-slider-room3" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png"  alt="swiper-slider-room4"/>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 980
+                        <span class="luxury">люкс</span></a
+                      >
+                      <div class="item-price">8 500₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="third"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="third"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="third"
+                            value="3"
+                            aria-label="Нормально"
+                            checked
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="third"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="third"
+                            value="5"
+                            aria-label="Отлично"
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        35<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="swiper-slider-room" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" alt="swiper-slider-room" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" alt="swiper-slider-room"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="swiper-slider-room"/>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 856</a
+                      >
+                      <div class="item-price">7 300₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="fourth"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="fourth"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="fourth"
+                            value="3"
+                            aria-label="Нормально"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="fourth"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="fourth"
+                            value="5"
+                            aria-label="Отлично"
+                            checked
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        19<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" alt="swiper-slider-room"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="swiper-slider-room"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" alt="swiper-slider-room"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png"alt="swiper-slider-room" />
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 740</a
+                      >
+                      <div class="item-price">6 000₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="sixth"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="sixth"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="sixth"
+                            value="3"
+                            aria-label="Нормально"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="sixth"
+                            value="4"
+                            aria-label="Хорошо"
+                            checked
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="sixth"
+                            value="5"
+                            aria-label="Отлично"
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        44<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" alt="swiper-slider-room3"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" alt="swiper-slider-room3"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png"alt="swiper-slider-room3" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="swiper-slider-room3"/>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 982</a
+                      >
+                      <div class="item-price">5 800₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="seventh"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="seventh"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="seventh"
+                            value="3"
+                            aria-label="Нормально"
+                            checked
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="seventh"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="seventh"
+                            value="5"
+                            aria-label="Отлично"
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        56<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/3.1.png"alt="swiper-slider-room3" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" alt="swiper-slider-room3"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" alt="swiper-slider-room3"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="swiper-slider-room3"/>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 678</a
+                      >
+                      <div class="item-price">5 500₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eighth"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eighth"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eighth"
+                            value="3"
+                            aria-label="Нормально"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eighth"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eighth"
+                            value="5"
+                            aria-label="Отлично"
+                            checked
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        45<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/3.2.png" alt="swiper-slider-room3" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" alt="swiper-slider-room3"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" alt="swiper-slider-room3"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="swiper-slider-room3"/>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 450</a
+                      >
+                      <div class="item-price">5 300₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="ninth"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="ninth"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="ninth"
+                            value="3"
+                            aria-label="Нормально"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="ninth"
+                            value="4"
+                            aria-label="Хорошо"
+                            checked
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="ninth"
+                            value="5"
+                            aria-label="Отлично"
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        39<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/3.3.png" alt="swiper-slider-room"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" alt="swiper-slider-room"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" alt="swiper-slider-room"/>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" alt="swiper-slider-room"/>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 350</a
+                      >
+                      <div class="item-price">5 000₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="tenth"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="tenth"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="tenth"
+                            value="3"
+                            aria-label="Нормально"
+                            checked
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="tenth"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="tenth"
+                            value="5"
+                            aria-label="Отлично"
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        77<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/4.1.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" />
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 666</a
+                      >
+                      <div class="item-price">5 000₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eleventh"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eleventh"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eleventh"
+                            value="3"
+                            aria-label="Нормально"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eleventh"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="eleventh"
+                            value="5"
+                            aria-label="Отлично"
+                            checked
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        25<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/4.2.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" />
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 444</a
+                      >
+                      <div class="item-price">5 000₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="twelfth"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="twelfth"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="twelfth"
+                            value="3"
+                            aria-label="Нормально"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="twelfth"
+                            value="4"
+                            aria-label="Хорошо"
+                            checked
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="twelfth"
+                            value="5"
+                            aria-label="Отлично"
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        15<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block__item">
+                <div class="item-block">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="img/rooms/4.3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.2.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="img/rooms/2.1.png" />
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <div class="item-block__body">
+                    <div class="item-block__block">
+                      <a href="" class="item-block__title"
+                        ><span class="symbol">№</span> 352</a
+                      >
+                      <div class="item-price">5 000₽ в сутки</div>
+                    </div>
+                    <hr class="hr-lines" />
+                    <div class="item-block__text">
+                      <fieldset class="rating">
+                        <div class="rating__group">
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="thirteenth"
+                            value="1"
+                            aria-label="Ужасно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="thirteenth"
+                            value="2"
+                            aria-label="Сносно"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="thirteenth"
+                            value="3"
+                            aria-label="Нормально"
+                            checked
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="thirteenth"
+                            value="4"
+                            aria-label="Хорошо"
+                          />
+                          <input
+                            class="rating__star"
+                            type="radio"
+                            name="thirteenth"
+                            value="5"
+                            aria-label="Отлично"
+                          />
+                          <div class="rating__focus"></div>
+                        </div>
+                      </fieldset>
+                      <div class="item-price">
+                        55<span class="item-price-text"> Отзывов</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pagination">
+                <ul>
+                  <!--pages or li are comes from javascript -->
+                </ul>
+              </div>
+              <div class="textin">1 - 12 из 100+ вариантов аренды</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__main _container">
+          <div class="footer__row">
+            <div class="footer__column">
+              <a href="" class="footer__logo">
+                <img src="img/Logo.svg" alt="Логотип" />
+              </a>
+              <div class="footer__subject">
+                <p>
+                  Бронирование номеров в лучшем отеле 2019 года по версии
+                  ассоциации "Отельные взгляды"
+                </p>
+              </div>
+            </div>
+
+            <div class="footer__column">
+              <h3>НАВИГАЦИЯ</h3>
+              <nav class="footer__menu menu-footer">
+                <ul class="menu-footer__list">
+                  <li class="menu-footer__item"></li>
+                  <li><a href="" class="menu-footer__link">О нас</a></li>
+                  <li><a href="" class="menu-footer__link">Новости</a></li>
+                  <li>
+                    <a href="" class="menu-footer__link">Служба поддержки</a>
+                  </li>
+                  <li><a href="" class="menu-footer__link">Услуги</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="footer__column">
+              <h3>О НАС</h3>
+              <nav class="footer__menu menu-footer">
+                <ul class="menu-footer__list">
+                  <li class="menu-footer__item"></li>
+                  <li><a href="" class="menu-footer__link">О сервисе</a></li>
+                  <li><a href="" class="menu-footer__link">Наша команда</a></li>
+                  <li><a href="" class="menu-footer__link">Вакансии</a></li>
+                  <li><a href="" class="menu-footer__link">Инвесторы</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="footer__column">
+              <h3>СЛУЖБА ПОДДЕРЖКИ</h3>
+              <nav class="footer__menu menu-footer">
+                <ul class="menu-footer__list">
+                  <li><a href="" class="menu-footer__link">Соглашения</a></li>
+                  <li></li>
+                  <li><a href="" class="menu-footer__link">Сообщества</a></li>
+                  <li><a href="" class="menu-footer__link">Связь с нами</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="footer__column">
+              <h3>ПОДПИСКА</h3>
+              <div class="footer__contacts contacts-footer">
+                <div class="contacts-footer__item">
+                  Получайте специальные предложения и новости сервиса
+                </div>
+              </div>
+              <div class="footer-search">
+                <input type="text" placeholder="E-mail" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="hr-line" />
+        <div class="footer__bottom">
+          <div class="footer__container _container">
+            <div class="footer__copy">
+              Copyright © 2018 Toxin отель. Все права защищены.
+            </div>
+            <div class="footer__social social">
+              <ul class="social-list">
+                <li>
+                  <a href="" class="social__item"
+                    ><img src="img/twit.svg" alt="social-twitter"
+                  /></a>
+                </li>
+                <li>
+                  <a href="" class="social__item"
+                    ><img src="img/faceb.svg" alt="social-facebook"
+                  /></a>
+                </li>
+                <li>
+                  <a href="" class="social__item"
+                    ><img src="img/insta.svg" alt="social-instagram"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/pagination.js"></script>
+    <script src="choices.min.js"></script>
+    <script src="nouislider.min.js"></script>
+    <script src="js/range-slider.js"></script>
+    <script src="js/rooms.js"></script>
+  </body>
+</html>
